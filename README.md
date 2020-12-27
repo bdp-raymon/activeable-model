@@ -1,7 +1,7 @@
 # A laravel package to activate or deactivate models on demand
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bdp-raymon/activeable-model.svg?style=flat-square)](https://packagist.org/packages/alish/activeable-model)
-[![Build Status](https://img.shields.io/travis/alish/activeable-model/master.svg?style=flat-square)](https://travis-ci.org/bdp-raymon/activeable-model)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/alish/activeable-model.svg?style=flat-square)](https://packagist.org/packages/alish/activeable-model)
+[![Build Status](https://img.shields.io/travis/bdp-raymon/activeable-model/master.svg?style=flat-square)](https://travis-ci.org/bdp-raymon/activeable-model)
 [![Quality Score](https://img.shields.io/scrutinizer/g/bdp-raymon/activeable-model.svg?style=flat-square)](https://scrutinizer-ci.com/g/bdp-raymon/activeable-model)
 [![Total Downloads](https://img.shields.io/packagist/dt/alish/activeable-model.svg?style=flat-square)](https://packagist.org/packages/alish/activeable-model)
 
