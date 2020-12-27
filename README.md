@@ -1,12 +1,11 @@
-# Very short description of the package
+# A laravel package to activate or deactivate models on demand
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alish/activeable-model.svg?style=flat-square)](https://packagist.org/packages/alish/activeable-model)
 [![Build Status](https://img.shields.io/travis/alish/activeable-model/master.svg?style=flat-square)](https://travis-ci.org/alish/activeable-model)
 [![Quality Score](https://img.shields.io/scrutinizer/g/alish/activeable-model.svg?style=flat-square)](https://scrutinizer-ci.com/g/alish/activeable-model)
 [![Total Downloads](https://img.shields.io/packagist/dt/alish/activeable-model.svg?style=flat-square)](https://packagist.org/packages/alish/activeable-model)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
-
+with this package you can add activation ability to your models
 ## Installation
 
 You can install the package via composer:
@@ -17,8 +16,42 @@ composer require alish/activeable-model
 
 ## Usage
 
+for adding activation behavior to your model just use `IsActiveable` trait to your model
 ``` php
-// Usage description here
+
+use Alish\ActiveableModel\Tratis\IsActiveable;
+
+class Model {
+    use IsActiveable;
+}
+
+```
+
+the default behavior of activation has been set to `true` ,if you want that your models became deactive by default:
+```php
+class Model {
+    use IsActiveable;
+
+    protected bool $defaultStatus = false;
+}
+```
+
+you have access to history of activation of your model with 
+```php
+    $histories = $model->activeStates()->get();
+
+    // get the exact time of state change
+    /** @var \Carbon\Carbon $changeStateTime */
+    $changeStateTime = $histories->first()->created_at;
+
+    // you can also get the status of state change
+    /** @var bool $status */
+    $status = $histories->first()->is_active;
+```
+
+you can also publish the migration file:
+```bash
+php artisan vendor:publish --provider="Alish\ActiveableModel\ActiveableModelServiceProvider" --tag=migrations
 ```
 
 ### Testing
